@@ -2,5 +2,13 @@
 
 
 {% block content %}
+
 <h1>This is my homepage!</h1>
+
+<ul>
+    {% for entry in album %}
+    <li>{{entry}}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
