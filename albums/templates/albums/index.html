@@ -6,8 +6,9 @@
 <h1>This is my homepage!</h1>
 
 <ul>
-    {% for entry in album %}
-    <li>{{entry}}</li>
+    {% for album in albums %}
+    <li><a href="{% url 'album_details' album.pk %}">{{album}}</a></li>
+
     {% endfor %}
 </ul>
 

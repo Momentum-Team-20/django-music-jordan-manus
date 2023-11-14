@@ -23,7 +23,6 @@ from albums import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('albums/', include('albums.urls')),
-    path('album/<int:pk>', views.album_details, name='album_details'),
-    path('album/<int:album_pk>/album/new', views.create_album, name='create-album'),
+    path('', include('albums.urls')),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

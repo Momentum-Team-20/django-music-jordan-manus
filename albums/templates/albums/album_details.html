@@ -1,13 +1,20 @@
-{% load static %}
+{% extends 'base.html' %}
+
+
+{% block content %}
 
 <h1>This is my album detail page!</h1>
 {{ album }}
 
 <h2>The details of this album are: </h2>
 <ul>
-    {% for entry in album..all %}
-    <li>{{ game }}</li>
-    {% endfor %}
+    <li>Album Title: {{album.album_name}}</li>
+    <li>Artist Name: {{album.artist}}</li>
+    <li>Number of Tracks: {{album.num_of_tracks}}</li>
+    <li>Album Release Date: {{album.release_date}}</li>
 </ul>
 
+
 <a href="{% url 'home' %}">homepage</a>
+
+{% endblock %}
