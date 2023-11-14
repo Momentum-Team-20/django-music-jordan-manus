@@ -1,0 +1,13 @@
+{% load static %}
+
+<h1>This is my album detail page!</h1>
+{{ album }}
+
+<h2>The details of this album are: </h2>
+<ul>
+    {% for entry in album..all %}
+    <li>{{ game }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'home' %}">homepage</a>

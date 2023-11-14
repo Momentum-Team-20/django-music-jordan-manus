@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.list_albums, name='home'),
+    path('', views.home, name='home'),
+    
 ]
