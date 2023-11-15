@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>This is the create album form page</h1>
+<h2>{% if pk %} Edit {% else %} New {% endif %} Album</h2>
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="Submit">Submit</button>
+</form>
+{% endblock %}
