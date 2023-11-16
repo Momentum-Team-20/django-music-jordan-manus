@@ -3,10 +3,19 @@
 {% block content %}
 <h1>This is the create album form page</h1>
 <h2>{% if pk %} Edit {% else %} New {% endif %} Album</h2>
-<form action="" method="post" novalidate>
+<form action="" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-
-    <button type="Submit">Submit</button>
+    {% for field in form %}
+    <div class="label block text-sm font-medium leading-6 text-gray-900">
+        {{field.label_tag}}
+    </div>
+    <div
+        class="input mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        {{field}}
+    </div>
+    {% endfor %}
+    <button type="Submit"
+        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
 </form>
+
 {% endblock %}

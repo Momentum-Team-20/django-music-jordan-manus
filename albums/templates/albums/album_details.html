@@ -14,9 +14,17 @@
     <li>Album Release Date: {{album.release_date}}</li>
 </ul>
 
-
-<a href="{% url 'home' %}">homepage</a>
-<a href="{% url 'edit-album' album.pk %}">Edit</a>
-
+<button type='button'
+    class="block text-sm text-slate-500 mr-4 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:bg-violet-200">
+    <a href="{% url 'home' %}">homepage</a>
+</button>
+<button type='button'
+    class="block text-sm text-slate-500 mr-4 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:bg-violet-200">
+    <a href="{% url 'edit-album' album.pk %}">Edit</a>
+</button>
+<button type='button'
+    class="block text-sm text-slate-500 mr-4 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:bg-violet-200">
+    <a href="{% url 'delete-album' album.pk %}">Delete</a>
+</button>
 {% endblock %}
 <!-- <p><a href="{% url 'edit-album' %}">Edit</a></p> -->
